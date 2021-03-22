@@ -1,0 +1,10 @@
+
+<p>
+  Quantity:
+  <span class="my-web">{{quantity}}</span>
+  <button [disabled]="quantity==10"(click)="increment()">Up</button>
+  <button [disabled]="quantity==0" (click)="decrement()">Down</button>
+  <span class="bar">
+    <ng-container *ngFor="let i of [].constructor(quantity)">{{emoji}}</ng-container>
+  </span>
+</p>
