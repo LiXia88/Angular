@@ -1,0 +1,21 @@
+<h3>My heroes</h3>
+<ul>
+  <li *ngFor="let hero of heroes">
+    <p>I am hero {{ hero.name }} (id: {{ hero.id }}) LF={{ hero.lifeForce }}</p>
+  </li>
+</ul>
+<div>
+  <button (click)="add('Thudread')">Add Thudread</button>
+</div>
+<div>
+  <button (click)="rename(heroes[1])">Rename Goku to Saitama</button>
+</div>
+<div>
+  <button (click)="remove(heroes[1])">Delete  Goku</button>
+</div>
+<div>
+  <button (click)="removeLastHero()">Delete last hero</button>
+</div>
+<div>
+  <button (click)="decrementLifeForce(heroes[1])">Attack Goku</button>
+</div>
