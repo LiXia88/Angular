@@ -8,7 +8,9 @@ export class DataServiceService {
   constructor() {}
   createDb(): { heroes: Hero[] } {
     return {
-      heroes: [],
+      heroes: [
+        {id: 8, name: "Spiderman", lifeForce: 32}
+      ],
     };
   }
 
@@ -17,9 +19,9 @@ export class DataServiceService {
   // list is empty. See https://github.com/angular/angular/issues/22120
   genId(heroes: Hero[]): number {
     if (heroes.length > 0) {
-      return Math.max(...heroes.map((hero) => hero.id)) + 1;
+      return Math.max(...heroes.map((hero) => hero.id)) + 5;
     } else {
-      return 1;
+      return 9;
     }
   }
 }
