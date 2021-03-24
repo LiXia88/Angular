@@ -39,7 +39,7 @@ export class HeroListComponent implements OnInit {
       name: 'Saitama',
     };
     this.heroService.editHero(hero.id, existingHero).subscribe(() => {
-      this.heroes.find((hero) => hero.id).name = existingHero.name;
+      this.heroes.find((hero) => hero.id == existingHero.id).name = existingHero.name;
     });
   }
   remove(hero: Hero) {
