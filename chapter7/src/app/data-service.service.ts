@@ -1,23 +1,18 @@
 import { Injectable } from '@angular/core';
-import {Hero} from './heroes/hero.model'
+import { InMemoryDbService } from 'angular-in-memory-web-api';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataServiceService {
+export class DataServiceService implements InMemoryDbService{
 
   constructor() { }
-  createDb():{heroes: Hero[]}{
+  createDb(){
     return{
       heroes:[{id:1, name: "Saitama", lifeForce:100,},
          {id:2, name: "Goku", lifeForce:100,}],
-    }
-  }
-  genId(heroes: Hero[]):number{
-    if(heroes.length > 0){
-      return Math.max(...heroes.map((hero)=>hero.id)) + 1;
-    }else{
-      return 1;
     }
   }
 }

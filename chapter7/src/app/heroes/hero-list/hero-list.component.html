@@ -24,6 +24,6 @@
 </div>
 
 <p>
-  <input type="text" placeholder="New hero name" />
-  <button>Add</button>
+  <input type="text" placeholder="New hero name" #newHeroName  />
+  <button (click)="addHeroName(newHeroName.value)">Add</button>
 </p>

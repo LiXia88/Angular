@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Hero } from '../hero.model';
 import { HeroService } from '../hero.service';
 
@@ -10,6 +10,7 @@ import { HeroService } from '../hero.service';
 export class HeroListComponent implements OnInit {
 
   heroes: Hero[];
+  @ViewChild('newHeroName', {static: true}) newHeroNameInput: ElementRef;
 
   constructor(private heroService: HeroService) {}
 
@@ -64,6 +65,10 @@ export class HeroListComponent implements OnInit {
     this.heroService.getHeroes().subscribe((heroes) => {
       this.heroes = heroes;
     });
+  }
+  addHeroName(name: string){
+    this.add(name);
+    this.newHeroNameInput.nativeElement.value = '';
   }
 
 }

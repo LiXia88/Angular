@@ -14,8 +14,7 @@ export class HeroService {
   constructor(private http: HttpClient) { }
 
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl,  {
-      headers: new HttpHeaders({'Authorization': 'myAuthToken'})
+    return this.http.get<Hero[]>(this.heroesUrl, {
     }).pipe(
       retry(2),
       catchError((error: HttpErrorResponse) => {

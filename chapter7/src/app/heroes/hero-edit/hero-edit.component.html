@@ -1,0 +1,15 @@
+<p>hero-edit works!</p>
+<h1>Edit {{ hero?.name }}</h1>
+
+<p>Name: <input type="text" value="{{ hero?.name }}" #editName /></p>
+
+<p>
+  Life force:
+  <input type="number" value="{{ hero?.lifeForce }}" #editLifeForce />
+</p>
+
+<p>
+  <a routerLink="..">Cancel</a>
+
+  <button (click)="save()">Save</button>
+</p>
