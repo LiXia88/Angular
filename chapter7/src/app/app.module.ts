@@ -24,7 +24,7 @@ import { HeroesModule } from './heroes/heroes.module';
     HeroesModule,
 
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
