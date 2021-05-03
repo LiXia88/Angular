@@ -1,5 +1,5 @@
 <h3>My heroes</h3>
-<ul>
+<ul id="hero-list">
   <li *ngFor="let hero of heroes">
     <p>
       I am hero <a [routerLink]="['/hero', hero.id]">{{ hero.name }}</a> (id:
@@ -23,7 +23,45 @@
   <button (click)="decrementLifeForce(heroes[1])">Attack GoKu</button>
 </div>
 
-<p>
-  <input type="text" placeholder="New hero name" #newHeroName  />
-  <button (click)="addHeroName(newHeroName.value)">Add</button>
+<p id="newHeroForm">
+  <input type="text" placeholder="New hero name" #newHeroName/>
+  <button (click)="addNamed(newHeroName.value)">Add</button>
 </p>
+
+<form formGroup="heroDetails" (ngSubmit)="addDetailedHero()">
+  <div>
+    <label>Name:</label>
+    <input type="text" formControlName="name" required />
+  </div>
+  <div>
+    <label>Real Name:</label>
+    <input type="text" formControlName="realName" />
+  </div>
+
+  <form formGroupName="biometricData">
+    <div>
+      <label>Age:</label>
+      <input type="number" formControlName="age" />
+    </div>
+    <div>
+      <label>Eyes:</label>
+      <input type="color" formControlName="eyes" />
+    </div>
+    <div>
+      <label>Hair:</label>
+      <input type="color" formControlName="hair" />
+    </div>
+  </form>
+
+  <button (click)="addPower()">Add Power</button>
+
+  <div
+    formArrayName="powers"
+    *ngFor="let power of powers.controls; let i = index"
+  >
+    <label>Power {{ i }}:</label>
+    <input type="text" [formControlName]="i" />
+  </div>
+
+  <button type="submit" [disabled]="!heroDetails.valid">Add Hero</button>
+</form>

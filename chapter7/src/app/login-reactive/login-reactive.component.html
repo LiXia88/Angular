@@ -1,0 +1,20 @@
+<p>login-reactive works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <div>
+    <input type="email" name="username" placeholder="Email/Username"
+      formControlName="username" required />
+    <span class="help-block" *ngIf="username.touched && username.invalid">
+      The email or username is not valid
+    </span>
+  </div>
+  <div>
+    <input type="password" name="password" placeholder="Password"
+    formControlName="password"
+    required />
+  </div>
+  <div>
+    <button type="submit" [disabled]="!loginForm.valid">log in</button>
+  </div>
+</form>
+
+<p>You are trying to log in as {{username}}</p>

@@ -9,11 +9,16 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
 import { DataServiceService } from './data-service.service';
 import { HeroesModule } from './heroes/heroes.module';
+import { LoginFormComponent } from './login-form/login-form.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { LoginReactiveComponent } from './login-reactive/login-reactive.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
+    LoginFormComponent,
+    LoginReactiveComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,9 +27,10 @@ import { HeroesModule } from './heroes/heroes.module';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(DataServiceService),
     HeroesModule,
-
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [HttpClientModule],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

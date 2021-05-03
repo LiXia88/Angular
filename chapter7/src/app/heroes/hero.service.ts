@@ -14,8 +14,8 @@ export class HeroService {
   constructor(private http: HttpClient) { }
 
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl, {
-    }).pipe(
+    return this.http.get<Hero[]>(this.heroesUrl
+    ).pipe(
       retry(2),
       catchError((error: HttpErrorResponse) => {
         console.error(error);

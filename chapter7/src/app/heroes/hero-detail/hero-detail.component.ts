@@ -53,7 +53,8 @@ export class HeroDetailComponent implements OnInit {
     });
   }
 
-  edit() {
-    this.router.navigate(['/hero', this.hero.id, 'edit']);
+  edit(){
+    this.router.navigate(['/hero', this.hero.id, 'edit'])
   }
+
 }

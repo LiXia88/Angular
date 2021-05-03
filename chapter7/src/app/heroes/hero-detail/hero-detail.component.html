@@ -2,8 +2,8 @@
 
 <p>hero-detail works!</p>
 
-<p><b>HP:</b> {{ hero?.lifeForce }}</p>
+<p id="HP"><b>HP:</b> {{ hero?.lifeForce }}</p>
 
-<button (click)="regenerate()">HP Recovery</button>
+<button id="regenerate" (click)="regenerate()">HP Recovery</button>
 <button (click)="delete()">Delete</button>
 <button (click)="edit()">Edit</button>

@@ -27,10 +27,6 @@ describe('PageNotFoundComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have a heading that says "Oops"', ()=>{
-    expect(fixture.nativeElement.querySelector('h3').textContent).toContain('Oops');
-  });
-
   it('should have an errorCode field with 404', ()=>{
     expect(component.errorCode).toBe(404);
   })
